@@ -1,0 +1,4 @@
+playwright
+crawl4ai
+pandas
+openpyxl
