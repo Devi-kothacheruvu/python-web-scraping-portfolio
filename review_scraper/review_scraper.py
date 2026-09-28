@@ -7,8 +7,23 @@ from urllib.parse import urljoin
 
 from playwright.async_api import async_playwright, TimeoutError as PlaywrightTimeoutError
 
-from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
-from crawl4ai.async_configs import BrowserConfig
+try:
+    from crawl4ai import AsyncWebCrawler, CrawlerRunConfig
+except Exception:  # pragma: no cover - fallback for older/newer crawl4ai layouts
+    AsyncWebCrawler = None
+    CrawlerRunConfig = None
+
+try:
+    from crawl4ai.async_configs import BrowserConfig
+except Exception:  # pragma: no cover - fallback for newer crawl4ai releases
+    try:
+        from crawl4ai import BrowserConfig
+    except Exception:  # pragma: no cover
+        BrowserConfig = None
+
+
+def crawl4ai_available():
+    return AsyncWebCrawler is not None and CrawlerRunConfig is not None and BrowserConfig is not None
 
 
 # ============================================================
@@ -453,6 +468,10 @@ async def crawl4ai_process(html, base_url):
     It does NOT navigate Amazon independently.
     Playwright is responsible for Amazon interaction.
     """
+
+    if not crawl4ai_available():
+        print("Crawl4AI is not available in this environment. Skipping HTML processing.")
+        return html
 
     try:
 
@@ -1083,13 +1102,15 @@ async def main():
         # Crawl4AI object
         # ----------------------------------------------------
 
-        crawler = AsyncWebCrawler(
-            config=BrowserConfig(
-                headless=True
-            )
-        )
+        crawler = None
 
-        await crawler.__aenter__()
+        if crawl4ai_available():
+            crawler = AsyncWebCrawler(
+                config=BrowserConfig(
+                    headless=True
+                )
+            )
+            await crawler.__aenter__()
 
         try:
 
@@ -1130,11 +1151,12 @@ async def main():
 
         finally:
 
-            await crawler.__aexit__(
-                None,
-                None,
-                None
-            )
+            if crawler is not None:
+                await crawler.__aexit__(
+                    None,
+                    None,
+                    None
+                )
 
             await browser.close()
 
