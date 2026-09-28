@@ -1,0 +1,8 @@
+review_scraper/amazon_browser/
+
+__pycache__/
+*.pyc
+
+*.tmp
+
+books.xlsx
