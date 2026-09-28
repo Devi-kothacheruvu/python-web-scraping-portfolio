@@ -1,6 +1,6 @@
-# python-web-scraping-portfolio
+# Python Web Scraping Portfolio
 
-Hi! I'm a Python developer specializing in web scraping and data extraction.
+Hi! I'm a Python developer specializing in web scraping, browser automation, and data extraction.
 
 ## 🛠️ Skills
 
@@ -9,7 +9,8 @@ Hi! I'm a Python developer specializing in web scraping and data extraction.
 - Crawl4AI
 - BeautifulSoup
 - Pandas
-- Web Automation
+- Web Scraping
+- Browser Automation
 - Data Cleaning
 - JSON
 - CSV
@@ -17,98 +18,53 @@ Hi! I'm a Python developer specializing in web scraping and data extraction.
 
 ## 📌 Projects
 
-### 1. E-Commerce Product Scraper
+### 1. E-commerce Web Scraper
 
-A Python-based scraper that extracts product information from publicly accessible e-commerce pages.
-
-**Data extracted:**
-- Product name
-- Price
-- Rating
-- Review count
-- Product URL
-
-**Output:**
-- CSV
-- Excel
-- JSON
-
----
-
-### 2. Customer Review Scraper
-
-A web scraper that collects publicly available customer review information.
-
-**Data extracted:**
-- Reviewer name
-- Rating
-- Review title
-- Review text
-- Review date
+A Python-based web scraper that collects product information from an e-commerce website.
 
 **Features:**
-- Pagination handling
-- Scrolling/loading more reviews
-- Duplicate removal
-- Data cleaning
-
-**Output:**
-- CSV
-- Excel
-- JSON
-
----
-
-### 3. Business Review Data Scraper
-
-A Python automation project for collecting publicly available business/review information.
-
-**Data extracted:**
-- Business name
-- Rating
-- Review count
-- Reviewer name
-- Review rating
-- Review text
-- Review date
+- Scrapes product data across multiple pages
+- Handles pagination
+- Extracts 1000+ records
+- Cleans and structures scraped data
+- Exports data to CSV, JSON, and Excel
 
 **Technologies:**
-- Python
-- Playwright
-- Crawl4AI
-- Pandas
+Python, Playwright, Pandas
+
+📂 [`ecommerce_scraper`](./ecommerce_scraper)
 
 ---
 
-## 📊 Data Processing
+### 2. Amazon Review Scraper
 
-The extracted data can be:
+A Python-based review scraper built using Playwright and Crawl4AI.
 
-- Cleaned
-- Structured
-- Deduplicated
-- Converted between CSV, Excel and JSON
-- Organized according to client requirements
+**Features:**
+- Extracts product reviews
+- Loads additional review pages when available
+- Extracts reviewer name, rating, title, review text, and date
+- Removes duplicate reviews using review IDs
+- Provides rating-wise review counts
+- Exports data to CSV and JSON
 
-## 📂 Deliverables
+**Technologies:**
+Python, Playwright, Crawl4AI, Pandas
 
-I can provide scraped data in:
+📂 [`review_scraper`](./review_scraper)
 
-- CSV
-- Excel
-- JSON
+---
 
-## 📞 Services
+## 📊 What I Can Help With
 
-I provide Python-based:
+- Website data extraction
+- Product data scraping
+- Review scraping
+- Browser automation
+- Pagination and dynamic-content scraping
+- CSV / JSON / Excel data extraction
+- Data cleaning and formatting
 
-- Web scraping
-- Data extraction
-- Web automation
-- Review extraction
-- Data cleaning
-- CSV/Excel/JSON conversion
+## 📫 Contact
 
-## ⚠️ Note
-
-Scraping is performed only on publicly accessible data and in accordance with applicable website terms and restrictions.
+If you need help with web scraping or browser automation, feel free to contact me.
