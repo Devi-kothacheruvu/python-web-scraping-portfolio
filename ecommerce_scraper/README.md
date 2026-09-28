@@ -1,31 +1,41 @@
 # E-Commerce Product Scraper
 
-A Python web scraper that extracts publicly available product information from e-commerce websites.
+A Python-based web scraping project that collects publicly available product information from an e-commerce practice website and exports the data into CSV and JSON formats.
 
-## Data Extracted
+## 🚀 Features
 
-- Product Name
-- Price
-- Rating
-- Review Count
-- Product URL
+- Automated browser-based scraping
+- Scrapes multiple pages
+- Handles pagination automatically
+- Extracts structured product information
+- Saves data as CSV and JSON
+- Uses Pandas for data processing
+- Collects 1,000 product records
 
-## Technologies
+## 📊 Data Extracted
+
+| Field | Description |
+|---|---|
+| Title | Product name |
+| Price | Product price |
+| Rating | Product rating |
+| Availability | Stock availability |
+| Product URL | Product page URL |
+
+## 🛠️ Technologies Used
 
 - Python
 - Playwright
 - Pandas
-
-## Output
-
-- CSV
-- Excel
 - JSON
+- CSV
 
-## Features
+## 📁 Project Structure
 
-- Automated browser navigation
-- Product data extraction
-- Pagination handling
-- Data cleaning
-- Duplicate removal
+```text
+ecommerce_scraper/
+│
+├── scraper.py
+├── books.csv
+├── books.json
+└── README.md
